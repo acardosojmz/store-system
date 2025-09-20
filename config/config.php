@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://store-system/'); // Cambiar por tu dominio
+define('BASE_URL', getenv('BASE_URL'));
 define('SITE_NAME', 'Sistema de Tienda');
 define('TIMEZONE', 'America/Mexico_City');
 
