@@ -1,5 +1,9 @@
 <?php
-define('BASE_URL', getenv('BASE_URL'));
+
+$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https://' : 'http://';
+$baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/';
+
+define('BASE_URL', $baseUrl);
 define('SITE_NAME', 'Sistema de Tienda');
 define('TIMEZONE', 'America/Mexico_City');
 
